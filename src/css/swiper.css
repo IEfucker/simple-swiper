@@ -1,0 +1,9 @@
+.swiper-container-android .swiper-slide, .swiper-wrapper {
+    -webkit-transform: translate3d(0px, 0, 0);
+    transform: translate3d(0px, 0, 0);
+}
+
+.transition-normal{
+    -webkit-transition: -webkit-transform .6s ease;
+    transition: transform .6s ease;
+}
