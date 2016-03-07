@@ -75,12 +75,8 @@ define(function (require, exports, module) {
             pageCount,
             pageHeight,
             touchStarted = false;
-        if(window && typeof window.innerHeight === 'number'){//window height available
-            pageHeight = window.innerHeight;
-        }
-        if(pageHeight < document.body.clientHeight){
-            pageHeight = document.body.clientHeight;
-        }
+        
+        pageHeight = document.body.clientHeight;
         
         if (typeof swiperContain === 'string') {
             if (swiperContain[0] === '.') {
