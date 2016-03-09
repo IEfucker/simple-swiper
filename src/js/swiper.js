@@ -73,11 +73,9 @@ define(function (require, exports, module) {
             currentTranslateY,
             swipeRange = o['swipeRange'],
             pageCount,
-            pageHeight,
+            pageHeight = 0,
             touchStarted = false;
-        
-        pageHeight = document.body.clientHeight;
-        
+
         if (typeof swiperContain === 'string') {
             if (swiperContain[0] === '.') {
                 swiperContain = document.querySelector(swiperContain);
@@ -91,6 +89,10 @@ define(function (require, exports, module) {
         if (android) {
             swiperContain.classList.add('swiper-container-android');
         }
+
+        pageHeight = window.getComputedStyle(swiperContain, null).getPropertyValue('height');
+        pageHeight = pageHeight.replace('px','');
+        pageHeight = Number(pageHeight);
 
         //export prop
         s.swiperContain = swiperContain;
